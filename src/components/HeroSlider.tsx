@@ -55,7 +55,7 @@ export default function HeroSlider() {
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
-                href="https://wa.me/573001234567"
+                href="https://wa.me/573043701713"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-red px-6 py-4 text-sm"

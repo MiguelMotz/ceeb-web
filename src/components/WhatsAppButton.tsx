@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/573214599384"
+      href="https://wa.me/573043701713"
       target="_blank"
       rel="noreferrer"
       aria-label="Contactar por WhatsApp"

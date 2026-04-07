@@ -73,7 +73,7 @@ export default function Footer() {
             <h3 className="text-lg font-extrabold">Acción rápida</h3>
             <div className="mt-4 flex flex-col gap-4">
               <a
-                href="https://wa.me/573043701713"
+                href="https://wa.me/043701713"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-red px-5 py-3.5 text-sm"
