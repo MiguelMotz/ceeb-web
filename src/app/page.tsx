@@ -4,31 +4,30 @@ import Navbar from "../components/Navbar";
 import SectionIntro from "../components/SectionIntro";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Link from "next/link";
-import { FiCheckCircle, FiTool, FiZap } from "react-icons/fi";
 
-const serviciosHome = [
+const serviciosPreview = [
   {
-    icon: <FiTool size={22} />,
-    title: "Construcción general",
-    text: "Obras civiles, adecuaciones, remodelaciones y soluciones constructivas para proyectos residenciales y comerciales.",
+    title: "Adecuaciones eléctricas",
+    text: "Intervenciones técnicas para mejorar, adaptar o ampliar instalaciones eléctricas.",
   },
   {
-    icon: <FiZap size={22} />,
-    title: "Servicios eléctricos",
-    text: "Instalaciones, mantenimiento y soporte técnico con enfoque en seguridad, funcionamiento y cumplimiento.",
+    title: "Remodelaciones y obra civil",
+    text: "Trabajos de adecuación y transformación de espacios residenciales y comerciales.",
   },
   {
-    icon: <FiCheckCircle size={22} />,
-    title: "Cumplimiento y respaldo",
-    text: "Procesos serios, atención oportuna y acompañamiento profesional durante cada etapa del trabajo.",
+    title: "Mantenimiento preventivo",
+    text: "Revisión y atención oportuna para conservar espacios e instalaciones en buen estado.",
+  },
+  {
+    title: "Soporte técnico especializado",
+    text: "Acompañamiento profesional para evaluar necesidades y ejecutar soluciones confiables.",
   },
 ];
 
-const proyectosPreview = [
+const experienciaCinemark = [
   "Adecuaciones eléctricas",
   "Remodelaciones y obra civil",
-  "Mantenimiento preventivo",
-  "Soporte técnico especializado",
+  "Salas de cine y espacios comerciales",
 ];
 
 export default function Home() {
@@ -43,96 +42,95 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-space-sm bg-neutral-50">
+        <section className="bg-neutral-50 py-12">
           <div className="container-ceeb">
-            <SectionIntro
-              title="Soluciones en construcción y servicios eléctricos"
-              text="CEEB ofrece una presentación clara y profesional de sus servicios, experiencia y proyectos, con acceso directo a contacto por WhatsApp y correo."
-            />
+            <div className="grid gap-8 overflow-hidden rounded-[34px] border border-neutral-200 bg-white p-7 shadow-sm md:grid-cols-[0.9fr_1.1fr] md:items-center md:p-10">
+              <div className="rounded-[28px] bg-black p-7 text-white">
+                {/* Logo autorizado para mostrar la relación comercial */}
+                <div className="flex min-h-[120px] items-center justify-center rounded-3xl bg-white p-6">
+                  <img
+                    src="/logo-cinemark.svg"
+                    alt="Logo de Cinemark"
+                    className="max-h-20 w-full object-contain"
+                  />
+                </div>
 
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
-              {serviciosHome.map((item) => (
-                <article key={item.title} className="card-ceeb p-6">
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-red-50 text-red-600">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-lg font-extrabold text-black">
+                <p className="mt-6 text-xs font-extrabold uppercase tracking-[0.2em] text-red-400">
+                  Aliado eléctrico
+                </p>
+
+                <h2 className="mt-2 text-2xl font-extrabold leading-tight">
+                  Aproximadamente desde 2018
+                </h2>
+              </div>
+
+              <div>
+                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-red-600">
+                  Experiencia destacada
+                </p>
+
+                <h2 className="mt-3 text-3xl font-extrabold leading-tight text-black md:text-4xl">
+                  Aliado eléctrico de Cinemark desde aproximadamente 2018
+                </h2>
+
+                <p className="mt-5 max-w-3xl text-sm leading-7 text-neutral-600 md:text-base">
+                  CEEB ha participado en proyectos de construcción, adecuación,
+                  remodelación e infraestructura eléctrica para espacios
+                  Cinemark, aportando soluciones técnicas para salas de cine,
+                  áreas comerciales y proyectos de expansión.
+                </p>
+
+                {/* En móvil se ocultan para reducir scroll vertical */}
+                <div className="hidden mt-7 gap-3 md:grid md:grid-cols-3">
+                  {experienciaCinemark.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4 text-sm font-bold leading-6 text-neutral-800"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 bg-white">
+          <div className="container-ceeb">
+            <div className="max-w-4xl">
+              <SectionIntro
+                badge="Servicios"
+                title="Servicios principales"
+                text="CEEB desarrolla soluciones en construcción, adecuaciones, instalaciones eléctricas y mantenimiento técnico para proyectos residenciales, comerciales e institucionales."
+              />
+            </div>
+
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+              {serviciosPreview.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-3xl border border-neutral-200 bg-neutral-50 px-6 py-6"
+                >
+                  {/* Detalle visual para reforzar marca sin parecer botón */}
+                  <div className="mb-5 h-1.5 w-10 rounded-full bg-red-600" />
+
+                  <h3 className="text-base font-extrabold text-black">
                     {item.title}
                   </h3>
+
                   <p className="mt-3 text-sm leading-7 text-neutral-600">
                     {item.text}
                   </p>
                 </article>
               ))}
             </div>
-          </div>
-        </section>
 
-        <section className="py-14 bg-white">
-          <div className="container-ceeb">
-            <div className="grid items-start gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-              <div>
-                <SectionIntro
-                  badge="Servicios"
-                  title="Lo que hacemos"
-                  text="Mostramos una vista resumida en la home. El detalle completo vive en su página independiente para mantener el inicio más limpio."
-                />
-
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {proyectosPreview.map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-3xl border border-neutral-200 bg-white px-5 py-5 text-sm font-semibold leading-6 text-neutral-800 shadow-sm"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6">
-                  <Link
-                    href="/servicios"
-                    className="btn-red px-6 py-3 text-sm"
-                  >
-                    Ver todos los servicios
-                  </Link>
-                </div>
-              </div>
-
-              <div className="overflow-hidden rounded-[30px] bg-black p-6 text-white shadow-lg md:p-8">
-                <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-red-400">
-                  CEEB
-                </p>
-
-                <h3 className="mt-4 max-w-[11ch] text-3xl font-extrabold leading-[1.02] md:text-4xl xl:text-[3.1rem]">
-                  Trabajo serio, técnico y visualmente profesional.
-                </h3>
-
-                <p className="mt-5 max-w-md text-sm leading-8 text-neutral-300 md:text-base">
-                  Una estructura más limpia ayuda a comunicar confianza y a
-                  mostrar mejor los servicios principales de la empresa.
-                </p>
-
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl bg-white/8 px-4 py-4 backdrop-blur-sm">
-                    <p className="text-sm font-semibold leading-6 text-white/95">
-                      Diseño responsive real
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl bg-white/8 px-4 py-4 backdrop-blur-sm">
-                    <p className="text-sm font-semibold leading-6 text-white/95">
-                      Navegación separada por vistas
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl bg-white/8 px-4 py-4 backdrop-blur-sm">
-                    <p className="text-sm font-semibold leading-6 text-white/95">
-                      Home más limpia y directa
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-8">
+              <Link href="/servicios" className="btn-red px-6 py-3 text-sm">
+                Ver todos los servicios
+              </Link>
             </div>
           </div>
         </section>
@@ -148,8 +146,8 @@ export default function Home() {
                   ¿Quieres cotizar o pedir información?
                 </h2>
                 <p className="mt-4 max-w-2xl text-sm leading-7 text-neutral-300 md:text-base">
-                  Dejamos la salida directa por WhatsApp y correo, sin
-                  formularios innecesarios para esta primera fase del proyecto.
+                  Escríbenos por WhatsApp o correo para recibir orientación
+                  sobre nuestros servicios.
                 </p>
               </div>
 
@@ -162,9 +160,10 @@ export default function Home() {
                 >
                   Escribir por WhatsApp
                 </a>
+
                 <a
                   href="mailto:contacto@ceeb.com"
-                  className="btn-outline border-white px-6 py-4 text-sm text-white hover:bg-white hover:text-black"
+                  className="btn-outline-light px-6 py-4 text-sm"
                 >
                   Enviar correo
                 </a>

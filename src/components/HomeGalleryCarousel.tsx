@@ -130,7 +130,8 @@ export default function HomeGalleryCarousel() {
                 Soluciones en construcción y servicios eléctricos
               </h3>
               <p className="mt-3 text-sm leading-6 text-neutral-600 md:leading-7">
-                CEEB ofrece servicio profesional, experiencia y calidad, contactanos.
+                CEEB ofrece servicio profesional, experiencia y calidad,
+                contáctanos.
               </p>
             </div>
 
@@ -162,7 +163,8 @@ export default function HomeGalleryCarousel() {
             </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          {/* En móvil se ocultan para evitar scroll innecesario */}
+          <div className="hidden gap-3 sm:grid sm:grid-cols-2">
             {slides.map((slide, index) => (
               <button
                 key={slide.title}

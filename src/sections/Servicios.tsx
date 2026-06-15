@@ -1,23 +1,23 @@
 const servicios = [
   {
-    titulo: "Construcción general",
+    titulo: "Adecuaciones eléctricas",
     descripcion:
-      "Ejecución de obras civiles, adecuaciones, remodelaciones y soluciones constructivas para distintos tipos de proyectos.",
+      "Intervenciones eléctricas para espacios residenciales, comerciales e institucionales, cuidando la seguridad, el funcionamiento y la correcta distribución de los puntos eléctricos.",
   },
   {
-    titulo: "Instalaciones eléctricas",
+    titulo: "Remodelaciones y obra civil",
     descripcion:
-      "Montaje, mantenimiento y adecuación de sistemas eléctricos con enfoque en seguridad, funcionalidad y cumplimiento técnico.",
+      "Ejecución de adecuaciones, mejoras locativas y trabajos de obra civil orientados a transformar espacios de manera funcional, ordenada y profesional.",
   },
   {
     titulo: "Mantenimiento preventivo",
     descripcion:
-      "Atención oportuna para conservar instalaciones y sistemas en óptimas condiciones y reducir fallos futuros.",
+      "Revisión y atención de instalaciones para prevenir fallas, conservar el buen estado de los espacios y reducir riesgos durante la operación diaria.",
   },
   {
     titulo: "Soporte técnico especializado",
     descripcion:
-      "Acompañamiento profesional para evaluar necesidades, proponer soluciones y ejecutar trabajos con criterio técnico.",
+      "Acompañamiento técnico para evaluar necesidades, proponer soluciones viables y ejecutar trabajos con criterio profesional en cada etapa del proyecto.",
   },
 ];
 
@@ -30,12 +30,12 @@ export default function Servicios() {
             Servicios
           </p>
           <h2 className="ceeb-subtitle mt-4 text-black">
-            Soluciones pensadas para construir, instalar y responder con eficiencia.
+            Soluciones técnicas para construir, adecuar y mantener espacios.
           </h2>
           <p className="ceeb-text mt-5 text-base md:text-lg">
-            Estos son algunos de los servicios que CEEB puede destacar en su web
-            corporativa. Luego podemos ajustarlos exactamente a la actividad real de
-            la empresa.
+            CEEB ofrece servicios enfocados en construcción, adecuaciones,
+            instalaciones eléctricas y mantenimiento, con atención profesional y
+            acompañamiento durante el desarrollo de cada trabajo.
           </p>
         </div>
 
@@ -45,10 +45,13 @@ export default function Servicios() {
               key={servicio.titulo}
               className="group ceeb-card p-8 transition duration-300 hover:-translate-y-1 hover:border-red-200"
             >
+              {/* Línea visual para reforzar la identidad roja de la marca */}
               <div className="mb-5 h-2 w-16 rounded-full bg-red-600 transition group-hover:w-24" />
+
               <h3 className="text-xl font-extrabold text-black">
                 {servicio.titulo}
               </h3>
+
               <p className="mt-4 text-sm leading-7 text-neutral-600">
                 {servicio.descripcion}
               </p>

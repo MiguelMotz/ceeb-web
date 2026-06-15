@@ -4,17 +4,18 @@ import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-900 bg-black text-white">
+    <footer className="border-t border-white/10 bg-black text-white">
       <div className="container-ceeb section-space-sm">
         <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr_1fr_1fr]">
           <div>
             <div className="mb-5 flex items-center gap-3">
-              <div className="relative h-14 w-14 overflow-hidden rounded-full bg-white">
+              {/* Logo sin fondo blanco para mantener coherencia con la navbar */}
+              <div className="relative h-14 w-14 overflow-hidden">
                 <Image
                   src="/logo.png"
                   alt="Logo CEEB"
                   fill
-                  className="object-contain p-1"
+                  className="object-contain"
                 />
               </div>
 
@@ -33,19 +34,24 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
+          {/* En móvil se oculta porque ya existe el menú principal */}
+          <div className="hidden lg:block">
             <h3 className="text-lg font-extrabold">Navegación</h3>
+
             <div className="mt-4 flex flex-col gap-3 text-sm text-neutral-400">
-              <Link href="/" className="hover:text-red-400">
+              <Link href="/" className="transition hover:text-red-400">
                 Inicio
               </Link>
-              <Link href="/nosotros" className="hover:text-red-400">
+
+              <Link href="/nosotros" className="transition hover:text-red-400">
                 Nosotros
               </Link>
-              <Link href="/servicios" className="hover:text-red-400">
+
+              <Link href="/servicios" className="transition hover:text-red-400">
                 Servicios
               </Link>
-              <Link href="/galeria" className="hover:text-red-400">
+
+              <Link href="/galeria" className="transition hover:text-red-400">
                 Galería
               </Link>
             </div>
@@ -73,7 +79,7 @@ export default function Footer() {
             <h3 className="text-lg font-extrabold">Acción rápida</h3>
             <div className="mt-4 flex flex-col gap-4">
               <a
-                href="https://wa.me/043701713"
+                href="https://wa.me/573043701713"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-red px-5 py-3.5 text-sm"
@@ -83,7 +89,7 @@ export default function Footer() {
 
               <a
                 href="mailto:contacto@ceeb.com"
-                className="btn-outline border-white px-5 py-3.5 text-sm text-white hover:bg-white hover:text-black"
+                className="btn-outline-light px-5 py-3.5 text-sm"
               >
                 Correo
               </a>
