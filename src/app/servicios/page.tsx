@@ -1,30 +1,36 @@
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import SectionIntro from "../../components/SectionIntro";
 import WhatsAppButton from "../../components/WhatsAppButton";
-import { FiTool, FiZap, FiSettings, FiCheckSquare } from "react-icons/fi";
+import { FiCheckCircle, FiSettings, FiTool, FiZap } from "react-icons/fi";
 
 const servicios = [
   {
-    icon: <FiTool size={22} />,
-    title: "Construcción general",
-    text: "Obras civiles, adecuaciones, remodelaciones y ejecución de soluciones constructivas para distintos espacios.",
+    icon: <FiZap size={22} />,
+    title: "Adecuaciones eléctricas",
+    text: "Intervenciones para adaptar, mejorar o ampliar instalaciones eléctricas en espacios residenciales, comerciales e institucionales.",
   },
   {
-    icon: <FiZap size={22} />,
-    title: "Instalaciones eléctricas",
-    text: "Montaje, adecuación y mantenimiento de sistemas eléctricos con criterios técnicos y de seguridad.",
+    icon: <FiTool size={22} />,
+    title: "Remodelaciones y obra civil",
+    text: "Adecuaciones, mejoras locativas y trabajos de obra civil orientados a transformar espacios de manera funcional y segura.",
   },
   {
     icon: <FiSettings size={22} />,
     title: "Mantenimiento preventivo",
-    text: "Intervenciones orientadas a conservar el buen estado de instalaciones y reducir fallos futuros.",
+    text: "Revisión y atención técnica para conservar instalaciones en buen estado, prevenir fallas y reducir riesgos operativos.",
   },
   {
-    icon: <FiCheckSquare size={22} />,
+    icon: <FiCheckCircle size={22} />,
     title: "Soporte técnico especializado",
-    text: "Evaluación de necesidades, acompañamiento técnico y ejecución profesional según el requerimiento del cliente.",
+    text: "Acompañamiento para evaluar necesidades, proponer soluciones viables y ejecutar trabajos con criterio profesional.",
   },
+];
+
+const enfoques = [
+  "Atención a proyectos residenciales, comerciales e institucionales.",
+  "Soluciones eléctricas y constructivas con criterio técnico.",
+  "Trabajo orientado a seguridad, cumplimiento y funcionamiento.",
+  "Experiencia en adecuaciones, remodelaciones y espacios comerciales.",
 ];
 
 export default function ServiciosPage() {
@@ -33,50 +39,92 @@ export default function ServiciosPage() {
       <Navbar />
 
       <main className="bg-white">
-        <section className="section-space bg-neutral-50">
+        <section className="bg-neutral-50 pt-8 pb-12 md:pt-10 md:pb-14">
           <div className="container-ceeb">
-            <SectionIntro
-              badge="Servicios"
-              title="Servicios de construcción y eléctricos"
-              text="Esta sección reúne el detalle de lo que hace la empresa, dejando la home más limpia y enfocada en impacto visual."
-            />
+            <div className="grid gap-8 rounded-[34px] border border-neutral-200 bg-white p-7 shadow-sm lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:p-9">
+              {/* Hero de servicios con mensaje comercial real */}
+              <div>
+                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-red-600">
+                  Servicios
+                </p>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                <h1 className="mt-4 text-4xl font-extrabold leading-[0.95] text-black md:text-5xl">
+                  Soluciones técnicas para construir, adecuar y mantener.
+                </h1>
+
+                <p className="mt-5 max-w-2xl text-sm leading-7 text-neutral-600 md:text-base md:leading-8">
+                  CEEB ofrece servicios de construcción, adecuaciones,
+                  instalaciones eléctricas y mantenimiento técnico, con enfoque
+                  en seguridad, cumplimiento y calidad de ejecución.
+                </p>
+              </div>
+
+              <div className="rounded-[28px] bg-black p-6 text-white">
+                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-red-400">
+                  Enfoque técnico
+                </p>
+
+                <h2 className="mt-3 text-3xl font-extrabold leading-tight">
+                  Trabajo serio para espacios residenciales y comerciales.
+                </h2>
+
+                <p className="mt-4 text-sm leading-7 text-neutral-300">
+                  Cada servicio se desarrolla con revisión previa, criterio
+                  profesional y acompañamiento durante la ejecución.
+                </p>
+
+                <div className="mt-6 h-1.5 w-16 rounded-full bg-red-600" />
+              </div>
+            </div>
+
+            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
               {servicios.map((item) => (
-                <article key={item.title} className="card-ceeb p-8">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-red-600">
+                <article
+                  key={item.title}
+                  className="rounded-[28px] border border-neutral-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-200 hover:shadow-md"
+                >
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-red-50 text-red-600">
                     {item.icon}
                   </div>
-                  <h3 className="text-xl font-extrabold text-black">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-neutral-600">
+
+                  <h3 className="text-lg font-extrabold leading-tight text-black">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-7 text-neutral-600">
                     {item.text}
                   </p>
                 </article>
               ))}
             </div>
 
-            <div className="mt-12 card-ceeb overflow-hidden">
-              <div className="grid md:grid-cols-2">
-                <div className="bg-black p-8 md:p-10 text-white">
+            <div className="mt-8 overflow-hidden rounded-[32px] border border-neutral-200 bg-white shadow-sm">
+              <div className="grid lg:grid-cols-[0.85fr_1.15fr]">
+                <div className="bg-black p-7 text-white md:p-8">
+                  {/* Cierre comercial de la página */}
                   <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-red-400">
-                    Enfoque de trabajo
+                    Método de trabajo
                   </p>
-                  <h2 className="mt-4 text-3xl font-extrabold">
-                    Menos relleno, más claridad.
+
+                  <h2 className="mt-3 text-3xl font-extrabold leading-tight">
+                    Diagnóstico, ejecución y acompañamiento.
                   </h2>
-                  <p className="mt-5 text-sm leading-7 text-neutral-300">
-                    La navegación separada permite explicar mejor cada servicio sin
-                    saturar la página principal.
+
+                  <p className="mt-4 text-sm leading-7 text-neutral-300">
+                    El objetivo es entregar soluciones funcionales, seguras y
+                    alineadas con las necesidades de cada espacio.
                   </p>
                 </div>
 
-                <div className="bg-white p-8 md:p-10">
-                  <ul className="space-y-4 text-sm leading-7 text-neutral-700">
-                    <li>• Atención a proyectos residenciales y comerciales.</li>
-                    <li>• Soluciones técnicas con criterio profesional.</li>
-                    <li>• Trabajo orientado a calidad, seguridad y cumplimiento.</li>
-                    <li>• Posibilidad de ampliar contenido con casos reales.</li>
-                  </ul>
+                <div className="grid gap-3 bg-white p-7 md:grid-cols-2 md:p-8">
+                  {enfoques.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4 text-sm font-semibold leading-7 text-neutral-700"
+                    >
+                      {item}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

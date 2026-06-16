@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import SectionIntro from "../../components/SectionIntro";
 import WhatsAppButton from "../../components/WhatsAppButton";
 
 const teamMembers = [
@@ -20,6 +19,12 @@ const teamMembers = [
     role: "Supervisor de Obra",
     image: "/equipo/ingeniero-2.jpg",
   },
+];
+
+const fortalezas = [
+  "Equipo técnico especializado",
+  "Experiencia en proyectos comerciales",
+  "Compromiso con la calidad",
 ];
 
 const valores = [
@@ -43,13 +48,55 @@ export default function NosotrosPage() {
       <Navbar />
 
       <main className="bg-white">
-        <section className="pt-8 pb-12 bg-neutral-50 md:pt-10 md:pb-14">
+        <section className="bg-neutral-50 pt-8 pb-12 md:pt-10 md:pb-14">
           <div className="container-ceeb">
-            <SectionIntro
-              badge="Nosotros"
-              title="CONSTRUCCIONES Y ELECTRICOS ESPINOSA BALLESTEROS"
-              text="Conoce parte del equipo profesional que respalda los proyectos de la empresa y hace posible una ejecución seria, técnica y confiable."
-            />
+            <div className="grid gap-8 rounded-[34px] border border-neutral-200 bg-white p-7 shadow-sm lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:p-9">
+              {/* Hero institucional de la página Nosotros */}
+              <div>
+                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-red-600">
+                  Nosotros
+                </p>
+
+                <h1 className="mt-4 text-4xl font-extrabold leading-[0.95] text-black md:text-5xl">
+                  Más de una década desarrollando soluciones técnicas.
+                </h1>
+
+                <p className="mt-5 max-w-2xl text-sm leading-7 text-neutral-600 md:text-base md:leading-8">
+                  CONSTRUCCIONES Y ELÉCTRICOS ESPINOSA BALLESTEROS integra
+                  experiencia, criterio técnico y capacidad de respuesta para
+                  ejecutar proyectos de construcción, adecuaciones e
+                  infraestructura eléctrica.
+                </p>
+
+                <div className="mt-7 hidden gap-3 md:grid md:grid-cols-3">
+                  {fortalezas.map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4 text-sm font-bold leading-6 text-neutral-800"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[28px] bg-black p-6 text-white">
+                <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-red-400">
+                  CEEB
+                </p>
+
+                <h2 className="mt-3 text-3xl font-extrabold leading-tight">
+                  Construcción y servicios eléctricos con respaldo profesional.
+                </h2>
+
+                <p className="mt-4 text-sm leading-7 text-neutral-300">
+                  Una empresa orientada al cumplimiento, la seguridad y la
+                  ejecución ordenada de cada proyecto.
+                </p>
+
+                <div className="mt-6 h-1.5 w-16 rounded-full bg-red-600" />
+              </div>
+            </div>
 
             <div className="mt-7 grid gap-6 md:grid-cols-3">
               {teamMembers.map((member) => (
