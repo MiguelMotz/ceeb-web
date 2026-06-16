@@ -225,7 +225,11 @@ export default function GaleriaPage() {
             </div>
 
             <div className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-xs font-bold text-white backdrop-blur-sm">
-              {selectedIndex + 1} / {items.length}
+              {selectedIndex !== null && (
+                <div className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-xs font-bold text-white backdrop-blur-sm">
+                  {selectedIndex + 1} / {items.length}
+                </div>
+              )}
             </div>
           </div>
         )}
